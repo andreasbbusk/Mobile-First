@@ -1,0 +1,1636 @@
+/*-- Reset --*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    line-height: calc(1em + 0.5rem);
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/*-- Variables --*/
+:root {
+    --clr-black: #0c0a09;
+    --clr-white: #f5f5f4;
+    --clr-footer: #1a1b1b;
+    --clr-yellow: #ffed00;
+    --clr-red: #e30613;
+}
+
+/*-- General styling --*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+}
+
+p {
+    font-weight: 300;
+    font-size: 0.75em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-white);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 200;
+}
+
+/*-- styling af error page--*/
+
+.errorpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 1em 0 1em;
+}
+
+.errorpage h1 {
+    font-size: 3em;
+}
+
+.errorpage p {
+    margin-top: 2em;
+    font-size: 1.5rem;
+}
+
+.errorpage img {
+    max-width: 80%;
+    margin-top: 4em;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.cointainer {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/*-- Header --*/
+.topnav {
+    overflow: hidden;
+    background-color: var(--clr-black);
+    padding: 1rem;
+}
+
+.topnav img {
+    width: 100px;
+    display: block;
+    padding-right: 1rem;
+}
+
+.header__icons {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--clr-footer);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: var(--clr-white);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+    background-color: var(--clr-footer);
+    color: var(--clr-white);
+}
+
+.dropdown-content a:hover {
+    /* background-color: var(--clr-footer); */
+    color: var(--clr-yellow);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.header__search,
+.header__shopping {
+    color: var(--clr-white);
+    background-color: var(--clr-black);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 8px 1rem 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .topnav a:not(:first-child),
+    .dropdown .dropbtn {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .header__search, .header__shopping {
+    display: none;
+}
+}
+
+
+@media screen and (max-width: 768px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .topnav.responsive .dropdown {
+        float: none;
+    }
+
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+
+    .topnav.responsive .dropdown .dropbtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/*-- Hero --*/
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    height: 300px;
+}
+
+.hero__button {
+    background-color: var(--clr-yellow);
+    width: 10em;
+    border: 1px solid var(--clr-yellow);
+    padding: 0.3em 1em;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.hero__button:hover {
+    background-color: transparent;
+    color: var(--clr-white);
+}
+
+
+.hero h1 {
+    font-size: 2em;
+    padding: 1.5rem;
+    font-weight: 200;
+}
+
+.hero.banner__front {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(20, 20, 20, 0.4)), url(../public/bjergtop.JPG);
+}
+
+/*-- Inspiration --*/
+
+#overskrift1 {
+    color: var(--clr-white);
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    padding: 4rem;
+}
+
+.kano_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.kano {
+    display: block;
+    margin: auto;
+}
+
+.text-container1,
+.text-container2 {
+    margin-top: 0.3rem;
+    color: #5a5a5a;
+    font-size: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 2rem;
+}
+
+.text-container1 {
+    padding-bottom: 2rem;
+}
+
+.annika_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.annika {
+    display: block;
+    margin: auto;
+}
+
+.underoverskrift1 {
+    color: var(--clr-white);
+    margin-top: 5%;
+    font-size: 1rem;
+    padding: 2em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.yellow-button {
+    background-color: var(--clr-yellow);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    width: 10em;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+}
+
+/* Hover-effekt på knappen */
+.yellow-button:hover {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    border: 2px solid var(--clr-yellow);
+}
+
+/* Featured-del */
+#overskrift2 {
+    color: var(--clr-white);
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    padding: 1.5em;
+}
+
+.image__grid {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 2rem;
+    margin-bottom: 4rem;
+}
+
+.image__grid img {
+    width: auto;
+    padding: 1.5rem 3.5rem;
+}
+
+.image__grid h3 {
+    color: var(--clr-white);
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.image__grid button {
+    border: 2px solid var(--clr-yellow);
+    color: var(--clr-white);
+    background-color: var(--clr-black);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    width: 10em;
+    padding: 0.3em 0;
+    transition: all 0.3s ease;
+}
+
+.image__grid button:hover {
+    transform: translateY(-1);
+}
+
+/*-- Footer --*/
+
+.footer__menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem;
+    margin-top: 30px;
+    background-color: var(--clr-footer);
+}
+
+.footer__menu2 {
+    display: none;
+}
+
+.footer__logo {
+    margin: auto;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: var(--clr-footer);
+}
+
+.footer__logo img {
+    width: 100px;
+}
+
+.footer__wrapper {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    font-size: 0.75em;
+    padding: 1rem 2rem;
+    background-color: var(--clr-footer);
+}
+
+input {
+    display: none;
+}
+
+label {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+}
+
+label div:first-child {
+    width: 100%;
+    line-height: 45px;
+    font-size: 1.2em;
+}
+
+.cross {
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+.cross:before,
+.cross:after {
+    content: '';
+    border-top: 2px solid var(--clr-yellow);
+    width: 15px;
+    display: block;
+    margin-top: 18px;
+    transition: 0.3s;
+}
+
+.cross:after {
+    transform: rotate(90deg);
+    margin-top: -2px;
+}
+
+.content {
+    font-size: 1.2em;
+    margin: 5px 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height, .5s;
+}
+
+.content a {
+    display: flex;
+    margin: 15px 0 15px 25px;
+}
+
+input:checked~.content {
+    max-height: 400px;
+    transition: max-height, 1s;
+}
+
+input:checked~label .cross:before {
+    transform: rotate(180deg);
+}
+
+input:checked~label .cross:after {
+    transform: rotate(0deg);
+}
+
+.mobil-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-black);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mobil-nav__menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobil-nav__link {
+    font-size: var(--size-sm);
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--clr-white);
+    letter-spacing: -0.05em;
+    transition: color 0.3s;
+}
+
+.mobil-nav__link:hover {
+    color: var(--clr-yellow);
+}
+
+.mobil-nav__search {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    border: none;
+    display: block;
+}
+
+.mobil-nav__shopping {
+    display: block;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: var(--clr-white);
+    background-color: var(--clr-black);
+    border: none;
+}
+
+
+/*-- Analog fremkaldelse & digitalisering - Underside 2 --*/
+.frem__hero {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.frem__hero img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.frem__hero h1 {
+    font-size: 2em;
+    padding: 2em 0;
+    font-weight: 200;
+}
+
+.frem__hero p {
+    padding: 4em 4em;
+}
+
+.analog__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--clr-yellow);
+    color: var(--clr-black);
+    height: 4em;
+    margin: 1rem 2rem;
+}
+
+.pris__infographic {
+    max-width: 768px;
+    margin: auto;
+    padding-bottom: 4rem;
+}
+
+.pris__infographic2 {
+    max-width: 768px;
+    margin: auto;
+    padding-bottom: 6rem;
+}
+
+.analog__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "title1 title2 title3"
+        "main1 priser1 special"
+        "main2 priser2 special"
+        "main3 priser3 special"
+        "main4 priser4 special"
+        "main5 priser5 special"
+        "main6 priser6 special";
+    padding: 1rem 1rem 4rem 1rem;
+}
+
+.analog__grid p {
+    padding: 1.5rem 0;
+}
+
+.analog__border {
+    border: solid 1px var(--clr-yellow);
+    text-align: center;
+    padding: 0.5em;
+}
+
+#title1 {
+    grid-area: title1;
+}
+
+#title2 {
+    grid-area: title2;
+}
+
+#title3 {
+    grid-area: title3;
+}
+
+#main1 {
+    grid-area: main1;
+    text-align: start;
+}
+
+#main2 {
+    grid-area: main2;
+    text-align: start;
+}
+
+#main3 {
+    grid-area: main3;
+    text-align: start;
+}
+
+#main4 {
+    grid-area: main4;
+    text-align: start;
+}
+
+#main5 {
+    grid-area: main5;
+    text-align: start;
+}
+
+#main6 {
+    grid-area: main6;
+    text-align: start;
+}
+
+#priser1 {
+    grid-area: priser1;
+    text-align: center;
+}
+
+#priser2 {
+    grid-area: priser2;
+    text-align: center;
+}
+
+#priser3 {
+    grid-area: priser3;
+    text-align: center;
+}
+
+#priser4 {
+    grid-area: priser4;
+    text-align: center;
+}
+
+#priser5 {
+    grid-area: priser5;
+    text-align: center;
+}
+
+#priser6 {
+    grid-area: priser6;
+    text-align: center;
+}
+
+#special_price {
+    grid-area: special;
+    text-align: center;
+}
+
+.img-slider {
+    padding: 2rem 1rem 4rem 1rem;
+    position: relative;
+}
+
+.img-title {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.slider-wrapper {
+    width: calc(100% - 50px);
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.img-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.img-container img {
+    display: block;
+    width: calc(98% / 3);
+    margin-right: 1%;
+    object-fit: cover;
+    max-height: 550px;
+}
+
+.img-container img:last-child {
+    margin-right: 0;
+}
+
+.analog__video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.analog__video p {
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+.analog__video img {
+    width: 100px;
+}
+
+.analog__video h4 {
+    padding: 0 2rem;
+    font-weight: 200;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 4em;
+    border: var(--clr-yellow) solid 1px;
+    margin: 2rem 2rem;
+}
+
+.video__grid {
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+    margin: auto;
+    max-width: 80%;
+}
+
+.video__grid p {
+    padding: 1rem;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.analog__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'info1 info2 info3'
+        'info4 info5 info6';
+    padding: 6rem 2rem;
+    grid-gap: 30px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.info-1 {
+    grid-area: info1;
+    align-items: center;
+}
+
+.info-2 {
+    grid-area: info2;
+}
+
+.info-3 {
+    grid-area: info3;
+}
+
+.info-4 {
+    grid-area: info4;
+}
+
+.info-5 {
+    grid-area: info5;
+}
+
+.info-6 {
+    grid-area: info6;
+}
+
+.analog__info img {
+    padding: 1rem;
+    width: 100px;
+}
+
+.analog__info h2 {
+    font-size: 1rem;
+}
+
+/*-- PASFOTO --*/
+
+#overskriftpas {
+    color: var(--clr-white);
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10%;
+}
+
+.center_broed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+/*--ikon_sektion--*/
+
+.pas__container {
+    display: flex;
+}
+
+.pas__header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pas__header h1 {
+    padding-bottom: 4rem;
+}
+
+.pas__header p {
+    font-size: 1rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+}
+
+#broed1 {
+    height: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 15%;
+}
+
+#broed2 {
+    height: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 40%;
+}
+
+#broed3 {
+    height: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 45%;
+}
+
+#broed4 {
+    height: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 45%;
+}
+
+#broed5 {
+    height: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 45%;
+}
+
+#broed6 {
+    height: 100%;
+    line-height: 1rem;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 45%;
+}
+
+.centerparagraf {
+    font-size: 0.75rem;
+    margin-bottom: 4%;
+}
+
+.centerparagraf2 {
+    font-size: 0.75rem;
+    margin: 1rem 1rem;
+    padding-bottom: 5rem;
+    text-align: center;
+}
+
+/* boks med tekst */
+
+
+.black-box {
+    background-color: black;
+    border: 0.02rem solid #ffed00;
+    width: 70%;
+    margin-bottom: 6%;
+    margin-top: 4%;
+}
+
+.black-box p {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/* priser */
+
+.containerpris {
+    display: flex;
+    text-align: left;
+    margin-right: 5%;
+}
+
+.columnpris {
+    margin: 5%;
+}
+
+#pris {
+    font-style: italic;
+}
+
+#prisoverskrift {
+    font-size: 0.6rem;
+}
+
+#pristekst {
+    text-align: left;
+    justify-content: left;
+}
+
+#prisliste {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.alle {
+    display: block;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+/*-- pris_grid --*/
+
+#pasfoto {
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: x-large;
+}
+
+.yellow-box2 {
+    padding: 3.5%;
+    margin: auto;
+    text-align: center;
+    background-color: #040404;
+    color: white;
+    border: 0.02rem solid #ffed00;
+    width: 70%;
+}
+
+.overskrift_pris {
+    font-size: 0.8rem;
+}
+
+.analog__grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title1 title2"
+        "mainet priseret"
+        "mainto priserto"
+        "maintre prisertre"
+        "mainfire priserfire"
+        "mainfem priserfem"
+        "mainseks priserseks";
+    padding: 1em 1em;
+
+}
+
+#mainet {
+    grid-area: mainet;
+    text-align: left;
+    margin-left: 25%;
+    margin-bottom: 20%;
+    line-height: 1.5;
+}
+
+#mainto {
+    grid-area: mainto;
+    text-align: left;
+    margin-left: 25%;
+    margin-bottom: 15%;
+    line-height: 1.5;
+}
+
+#priseret {
+    grid-area: priseret;
+    text-align: center;
+}
+
+#priserto {
+    grid-area: priserto;
+    text-align: center;
+}
+
+
+/* Ikoner-sektion*/
+
+.grid-container_ikoner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.item_ikoner {
+    align-items: center;
+    justify-items: center;
+}
+
+.item_ikoner img {
+    width: 100px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.img_ikoner {
+    max-width: 100%;
+    height: auto;
+}
+
+.tekst_ikon {
+    display: block;
+}
+
+
+#krav {
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 5%;
+    margin-bottom: 8%;
+}
+
+/* billede underside */
+
+#overskriftbilleder {
+    color: var(--clr-white);
+    font-weight: 200;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+/* billede med kameraer section */
+.custom-button {
+    border: 2px solid var(--clr-yellow);
+    padding: 2px 16px;
+    font-size: 0.6rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    margin: 0.5rem 0 2rem 0;
+}
+
+.custom-button:hover {
+    background-color: var(--clr-yellow);
+    color: rgb(0, 0, 0);
+}
+
+.image1 {
+    max-width: 170%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.image2 {
+    max-width: 170%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.image3 {
+    max-width: 170%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.image4 {
+    max-width: 170%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.tekst-billeder1 {
+    color: white;
+    font-size: 0.6rem;
+}
+
+.tekst-billeder2 {
+    color: white;
+    font-size: 0.6rem;
+}
+
+.tekst-billeder3 {
+    color: white;
+    font-size: 0.6rem;
+}
+
+.tekst-billeder4 {
+    color: white;
+    font-size: 0.6rem;
+}
+
+.image-container {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    margin: auto;
+    grid-gap: 10%;
+    max-width: 750px;
+}
+
+.image-container .column2 {
+    margin-left: -10px;
+    position: relative;
+}
+
+.image-kamera1 {
+    max-width: 75%;
+    padding-bottom: 6rem;
+    margin-top: 60%;
+}
+
+.image-kamera2 {
+    max-width: 70%;
+    padding-bottom: 6rem;
+    margin-top: 35%;
+}
+
+.image-kamera3 {
+    max-width: 75%;
+    padding-bottom: 6rem;
+    margin-top: 20%;
+}
+
+.image-kamera4 {
+    max-width: 75%;
+    padding-bottom: 6rem;
+    margin-top: 25%;
+}
+
+.column1 {
+    position: relative;
+    justify-content: center;
+}
+
+/* billedeunderside analog section */
+.image-analog {
+    width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+}
+
+.tekst-analog {
+    margin: 12% 15%;
+    text-align: center;
+}
+
+.custom-button2 {
+    background-color: var(--clr-yellow);
+    font-family: 'Montserrat', sans-serif;
+    width: 20em;
+    padding: 0.5em 1em;
+    border: none;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 10%;
+}
+
+@media screen and (min-width:535px) {
+    .frem__hero p {
+        padding: 4em 6em;
+    }
+}
+
+/*-- Mobile --*/
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .site__pas {
+        width: 538px;
+        margin: auto;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+        font-weight: 200;
+    }
+
+    .kano_container,
+    .annika_container,
+    .text-container1,
+    .text-container2 {
+        padding: 0rem 4rem;
+    }
+
+    .text-container1 {
+        padding-bottom: 1.5rem;
+    }
+
+    .image__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "sony1 panasonic"
+            "nikon sony2";
+    }
+
+    .image__grid img {
+        width: 500px;
+        margin: auto;
+        margin: 1em;
+    }
+
+    .image__grid button {
+        justify-self: center;
+    }
+
+    .grid1 {
+        display: grid;
+        grid-area: sony1;
+    }
+
+    .grid2 {
+        display: grid;
+        grid-area: panasonic;
+    }
+
+    .grid3 {
+        display: grid;
+        grid-area: nikon;
+    }
+
+    .grid4 {
+        display: grid;
+        grid-area: sony2;
+    }
+
+    .frem__hero p {
+        padding: 4em 10em;
+        font-size: 1em;
+    }
+
+    .tekst-billeder1,
+    .tekst-billeder2,
+    .tekst-billeder3,
+    .tekst-billeder4 {
+        font-size: 1rem;
+    }
+
+    #overskriftbilleder {
+        color: var(--clr-white);
+        font-weight: 200;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    .img-title {
+        font-size: 2rem;
+    }
+
+    .tekst-analog {
+        font-size: 1rem;
+    }
+
+    .custom-button2 {
+        font-size: 1rem;
+    }
+
+    .footer__logo {
+        margin: 0 3.25rem;
+    }
+}
+
+/*-- small Desktop --*/
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .site__pas {
+        width: 738px;
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+        font-weight: 200;
+    }
+
+    #overskrift1 {
+        font-size: 3em;
+    }
+
+    .inspiration__container {
+        display: grid;
+        height: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "kano annika";
+        padding: 0 0;
+    }
+
+    .kano_container {
+        display: grid;
+        grid-area: kano;
+        justify-self: center;
+    }
+
+    .annika_container {
+        display: grid;
+        grid-area: annika;
+        justify-self: center;
+    }
+
+    .kano_container,
+    .annika_container,
+    .text-container1,
+    .text-container2 {
+        padding: 0 2rem;
+    }
+
+    .underoverskrift1 {
+        font-size: 1.5rem;
+    }
+
+    #overskrift2 {
+        font-size: 3em;
+    }
+
+    .centerparagraf,
+    .centerparagraf2,
+    .tekst_ikon,
+    .analog__grid2 p {
+        font-size: 1rem;
+    }
+
+
+    .image__grid img {
+        width: 350px;
+        margin: 2em auto;
+    }
+
+    .frem__hero p {
+        padding: 4em 15em;
+        font-size: 1.1em;
+    }
+
+    #overskriftbilleder {
+        font-size: 3rem;
+    }
+
+    .img-title {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    .tekst-analog {
+        font-size: 1.5rem;
+    }
+
+    .image-analog {
+        padding-top: 1rem;
+    }
+
+    .footer__links {
+        font-size: 1em;
+    }
+
+    .footer__menu {
+        padding: 10% 20% 20% 20%;
+    }
+
+    .footer__menu {
+        display: none;
+    }
+
+    .footer__menu2 {
+        background-color: var(--clr-footer);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        display: flex;
+        width: 1024px;
+        margin: auto;
+    }
+
+    .footer-logo img {
+        padding: 2rem 0 2rem 2rem;
+        width: 150px;
+    }
+
+    .footer__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: start;
+        padding: 2rem 2rem;
+        width: 1024px;
+        margin: auto;
+    }
+
+    .footer__flex a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: var(--clr-yellow);
+        transition: width 0.4s;
+    }
+
+    .footer__flex a:hover::after {
+        width: 100%;
+    }
+
+    .footer-foerste p,
+    .footer-anden p,
+    .footer-tredje p,
+    .footer-fjerde p {
+        padding: 0.5rem;
+        width: 231px;
+    }
+
+    .footer-info {
+        width: 1024px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 1.5rem 0;
+    }
+
+    .footer-info td {
+        padding: 0 2.5rem;
+        font-size: 0.75em;
+    }
+}
+
+/*-- Large desktop --*/
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 100%;
+    }
+
+
+    .topnav img {
+        width: 170px;
+    }
+
+    .hero {
+        height: 700px;
+    }
+
+    .hero h1 {
+        font-size: 4em;
+        font-weight: 200;
+    }
+
+    #overskrift1 {
+        padding: 8rem;
+    }
+
+    .underoverskrift1 {
+        font-size: 1.7rem;
+    }
+
+    #overskrift2 {
+        font-size: 3em;
+        padding-top: 2em;
+    }
+
+    .yellow-button {
+        width: 15em;
+        padding: 1em 1.5em;
+    }
+
+    .image__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "sony1 panasonic nikon"
+            "sony2 nikon2 sony-cyber";
+    }
+
+    .image__grid img {
+        width: 350px;
+        margin: 2em auto;
+    }
+
+    .image__grid button {
+        justify-self: center;
+    }
+
+    .grid1 {
+        grid-area: sony1;
+    }
+
+    .grid2 {
+        grid-area: panasonic;
+    }
+
+    .grid3 {
+        grid-area: nikon;
+    }
+
+    .grid4 {
+        grid-area: sony2;
+    }
+
+    .grid5 {
+        grid-area: nikon2;
+    }
+
+    .grid6 {
+        grid-area: sony-cyber;
+    }
+    .frem__hero p {
+        padding: 4em 26em;
+        font-size: 1.1em;
+    }
+
+    .frem__hero img {
+        height: 800px;
+    }
+
+    .image-analog {
+        height: 800px;
+    }
+
+    .footer__links {
+        font-size: 1em;
+    }
+}
